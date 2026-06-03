@@ -1,0 +1,45 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL")
+  directUrl = env("POSTGRES_URL_NON_POOLING")
+}
+
+model Tournament {
+  id                Int       @id @default(autoincrement())
+  title             String
+  subtitle          String?
+  defendingChampion String?
+  startDate         DateTime
+  endDate           DateTime?
+  format            String
+  startingTime      Int
+  increment         Int
+  flyerURL          String?
+}
+
+model Champion {
+  firstInitial String
+  lastName     String
+  years        Int[]
+
+  @@unique([firstInitial, lastName])
+}
+
+model HomeInformation {
+  id          Int    @id @default(autoincrement())
+  location    String
+  locationUrl String
+  content     String
+}
+
+model HarmonySquareInformation {
+  id               Int      @id @default(autoincrement())
+  startDate        DateTime
+  endDate          DateTime
+  tournamentTitles String[]
+  tournamentUrls   String[]
+}

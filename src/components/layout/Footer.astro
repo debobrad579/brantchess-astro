@@ -1,0 +1,93 @@
+---
+import { Badge } from "@/components/ui/badge"
+---
+
+<footer
+    class="flex flex-col justify-between gap-4 bg-navbar px-5 py-4 text-navbar-foreground sm:px-10 md:flex-row md:gap-8 md:px-20 lg:px-[10vw]"
+>
+    <div class="flex flex-1 flex-col gap-4">
+        <h2 class="text-xl">Contact Information</h2>
+        <div class="flex flex-col gap-2 text-navbar-muted-foreground">
+            <div>
+                <h3 class="font-bold">
+                    Rob Gashgarian - President & Treasurer
+                </h3>
+                <p>
+                    Email:{" "}
+                    <a
+                        href="mailto:brantchessca@gmail.com"
+                        class="hover:underline"
+                    >
+                        brantchessca@gmail.com
+                    </a>
+                </p>
+                <p>
+                    Phone:{" "}
+                    <a href="tel:5197328909" class="hover:underline">
+                        (519) 732-8909
+                    </a>
+                </p>
+            </div>
+            <div>
+                <h3 class="font-bold">
+                    Lee Hendon - Tournament & Website Director
+                </h3>
+                <p>
+                    Email:{" "}
+                    <a
+                        href="mailto:brantchessca@gmail.com"
+                        class="hover:underline"
+                    >
+                        brantchessca@gmail.com
+                    </a>
+                </p>
+                <p>
+                    Phone:{" "}
+                    <a href="tel:5197718848" class="hover:underline">
+                        (519) 771-8848
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-1 flex-col gap-4">
+        <h2 class="text-xl">Membership Information</h2>
+        <div class="flex flex-col gap-2 text-navbar-muted-foreground">
+            <p>
+                For all visitors, your first three visits are absolutely FREE!
+                After that, you may continue to visit for a $2 fee per visit, or
+                you may buy a membership.
+            </p>
+            <div>
+                <h3 class="pb-1 font-bold">Memberships</h3>
+                <div class="flex flex-wrap gap-2">
+                    <Badge
+                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
+                    >
+                        Adult ($40)
+                    </Badge>
+                    <Badge
+                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
+                    >
+                        Student ($30)
+                    </Badge>
+                    <Badge
+                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
+                    >
+                        Junior ($30)
+                    </Badge>
+                    <Badge
+                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
+                    >
+                        Senior ($30)
+                    </Badge>
+                    <Badge
+                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
+                    >
+                        Family ($60)
+                    </Badge>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
