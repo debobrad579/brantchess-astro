@@ -1,0 +1,38 @@
+---
+import { Button } from "@/components/ui/button"
+import { ThemeToggleDesktop } from "./ThemeToggle"
+import { LinksDropdownDesktop } from "./LinksDropdown"
+import { HamburgerMenu } from "./HamburgerMenu"
+import Logo from "@/assets/logo.svg"
+---
+
+<nav
+    class="relative flex items-center justify-between bg-navbar px-5 py-2 text-navbar-foreground sm:px-10 md:px-20 lg:px-[10vw]"
+>
+    <a href="/">
+        <Logo width={128} height={128} />
+    </a>
+    <div class="block xl:hidden">
+        <HamburgerMenu client:load />
+    </div>
+    <div
+        class="absolute left-1/2 hidden -translate-x-1/2 gap-1 text-nowrap xl:block"
+    >
+        <Button variant={null} className="hover:bg-navbar-muted">
+            <a href="/schedule">Schedule & Games</a>
+        </Button>
+        <Button variant={null} className="hover:bg-navbar-muted">
+            <a href="/champions">Brantford Chess Champions</a>
+        </Button>
+        <Button variant={null} className="hover:bg-navbar-muted">
+            <a href="/harmony-square">Harmony Square</a>
+        </Button>
+        <Button variant={null} className="hover:bg-navbar-muted">
+            <a href="/learning-resources">Learning Resources</a>
+        </Button>
+        <LinksDropdownDesktop client:load />
+    </div>
+    <div class="hidden xl:block">
+        <ThemeToggleDesktop client:load />
+    </div>
+</nav>

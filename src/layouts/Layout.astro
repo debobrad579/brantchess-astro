@@ -1,7 +1,7 @@
 ---
 import { Separator } from "@/components/ui/separator"
 import { Font } from "astro:assets"
-import { Navbar } from "@/components/layout/Navbar"
+import Navbar from "@/components/layout/Navbar.astro"
 import Footer from "@/components/layout/Footer.astro"
 import "@/styles/global.css"
 ---
@@ -20,7 +20,7 @@ import "@/styles/global.css"
 	<body class="min-h-screen bg-background font-sans antialiased">
 		<div class="flex h-screen flex-col justify-between">
 			<div>
-				<Navbar client:load />
+				<Navbar />
 				<Separator />
 				<main
 					class="space-y-4 px-5 py-10 sm:px-10 md:px-20 lg:px-[10vw]"
@@ -38,19 +38,27 @@ import "@/styles/global.css"
 
 <script is:inline>
 	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
+		if (
+			typeof localStorage !== "undefined" &&
+			localStorage.getItem("theme")
+		) {
+			return localStorage.getItem("theme")
 		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
- 
-	if (typeof localStorage !== 'undefined') {
+		return window.matchMedia("(prefers-color-scheme: dark)").matches
+			? "dark"
+			: "light"
+	}
+	const isDark = getThemePreference() === "dark"
+	document.documentElement.classList[isDark ? "add" : "remove"]("dark")
+
+	if (typeof localStorage !== "undefined") {
 		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+			const isDark = document.documentElement.classList.contains("dark")
+			localStorage.setItem("theme", isDark ? "dark" : "light")
+		})
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ["class"],
+		})
 	}
 </script>
