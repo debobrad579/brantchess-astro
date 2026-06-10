@@ -1,7 +1,3 @@
----
-import { Badge } from "@/components/ui/badge"
----
-
 <footer
     class="flex flex-col justify-between gap-4 bg-navbar px-5 py-4 text-navbar-foreground sm:px-10 md:flex-row md:gap-8 md:px-20 lg:px-[10vw]"
 >
@@ -12,35 +8,35 @@ import { Badge } from "@/components/ui/badge"
                 <h3 class="font-bold">
                     Rob Gashgarian - President & Treasurer
                 </h3>
-                <p>
-                    Email:{" "}
+                <p class="flex items-center gap-1">
                     <a href="mailto:rob@brantchess.ca" class="hover:underline">
                         rob@brantchess.ca
                     </a>
-                </p>
-                <p>
-                    Phone:{" "}
+                    <span>|</span>
                     <a href="tel:5197328909" class="hover:underline">
                         (519) 732-8909
                     </a>
                 </p>
             </div>
             <div>
-                <h3 class="font-bold">
-                    Lee Hendon - Tournament & Website Director
-                </h3>
-                <p>
-                    Email:{" "}
+                <h3 class="font-bold">Lee Hendon - Tournament Director</h3>
+                <p class="flex items-center gap-1">
                     <a href="mailto:lee@brantchess.ca" class="hover:underline">
                         lee@brantchess.ca
                     </a>
-                </p>
-                <p>
-                    Phone:{" "}
+                    <span>|</span>
                     <a href="tel:5197718848" class="hover:underline">
                         (519) 771-8848
                     </a>
                 </p>
+            </div>
+            <div>
+                <h3 class="font-bold">
+                    Brady DeBoer - Web Developer & Designer
+                </h3>
+                <a href="mailto:brady@brantchess.ca" class="hover:underline">
+                    brady@brantchess.ca
+                </a>
             </div>
         </div>
     </div>
@@ -54,32 +50,10 @@ import { Badge } from "@/components/ui/badge"
             </p>
             <div>
                 <h3 class="pb-1 font-bold">Memberships</h3>
-                <div class="flex flex-wrap gap-2">
-                    <Badge
-                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
-                    >
-                        Adult ($40)
-                    </Badge>
-                    <Badge
-                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
-                    >
-                        Student ($30)
-                    </Badge>
-                    <Badge
-                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
-                    >
-                        Junior ($30)
-                    </Badge>
-                    <Badge
-                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
-                    >
-                        Senior ($30)
-                    </Badge>
-                    <Badge
-                        className="bg-navbar-muted text-navbar-foreground hover:bg-navbar-muted/60"
-                    >
-                        Family ($60)
-                    </Badge>
+                <div>
+                    <p>Adult: $40</p>
+                    <p>Student/Junior/Senior: $30</p>
+                    <p>Family: $60</p>
                 </div>
             </div>
         </div>
